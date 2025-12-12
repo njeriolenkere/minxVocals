@@ -1,0 +1,26 @@
+
+ html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:#071029;color:#e6eef6}
+    .app{max-width:980px;margin:18px auto;padding:12px}
+    header{display:flex;align-items:center;gap:12px}
+    button{padding:10px 12px;border-radius:8px;border:0;background:#7dd3fc;color:#012;font-weight:600}
+    .secondary{background:transparent;border:1px solid rgba(125,211,252,0.14);color:#7dd3fc}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:12px;margin-top:12px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    canvas{width:100%;height:240px;border-radius:8px;background:linear-gradient(#071a2a,#071227)}
+    .panel{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px}
+    .keyboard{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+    .key{width:28px;height:72px;background:#fff;color:#000;border-radius:4px;display:flex;align-items:flex-end;justify-content:center;font-size:10px;user-select:none}
+    .key.locked{opacity:0.25;pointer-events:none}
+    .key.black{background:#111;color:#fff;height:48px;margin-left:-14px;margin-right:-14px;z-index:2;width:20px}
+    .active{outline:3px solid rgba(125,211,252,0.25)}
+    .muted{color:#94a3b8;font-size:13px}
+    .range-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+    .controls{display:flex;gap:8px;align-items:center;margin-top:10px}
+  /* Highlight currently detected note */
+  
+.key.active {
+  background: rgb(240, 164, 164);   /* light blue fill */
+  color: #012;           /* dark text for contrast */
+  outline: 2px solid #38bdf8; /* optional glowing outline */
+  box-shadow: 0 0 8px rgba(125,211,252,0.6); /* optional glow */
+}
