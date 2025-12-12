@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vocal Range Finder — Fixed</title>
+  <link rel="stylesheet" href="vocalrange.css"> 
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1 style="margin:0;font-size:18px">Vocal Range Finder</h1>
+        <div class="muted">Sing into your device. Works on mobile — desktop needs HTTPS or localhost for mic.</div>
+      </div>
+    </header>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="stopBtn" class="secondary" disabled>Stop</button>
+      <button id="clearBtn" class="secondary">Clear</button>
+      <label style="margin-left:8px;display:flex;align-items:center;gap:6px"><input type="checkbox" id="lockRange"> Lock piano to detected range</label>
+      <div style="flex:1"></div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <canvas id="viz" width="1200" height="480"></canvas>
+
+        <div style="display:flex;gap:12px;margin-top:8px">
+          <div style="flex:1">
+            <div class="muted">Current note</div>
+            <div id="currentNote" style="font-weight:700;font-size:28px">—</div>
+            <div id="currentFreq" class="muted">— Hz</div>
+          </div>
+          <div style="width:220px">
+            <div class="muted">Detected range</div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div id="lowest" style="font-weight:700">Lowest: —</div>
+                <div id="lowestFreq" class="muted">—</div>
+              </div>
+              <div>
+                <div id="highest" style="font-weight:700">Highest: —</div>
+                <div id="highestFreq" class="muted">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <div class="muted">Piano (current note highlighted)</div>
+          <div class="keyboard" id="keyboard"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div class="muted">Session summary</div>
+            <div id="summary" style="font-weight:700">No data yet</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted">Live confidence</div>
+            <div id="confidence">—</div>
+          </div>
+        </div>
+
+        <div id="rangeList" style="margin-top:10px"></div>
+
+        <div class="muted" style="margin-top:10px">Tip: sing sustained vowels ("ah", "oo"). If mic fails on desktop, serve the file via <code>http://localhost:8000</code> or use HTTPS.</div>
+      </div>
+    </div>
+  </div>
+
+<script src="vocalrange.js"></script> 
+</body>
+</html>
